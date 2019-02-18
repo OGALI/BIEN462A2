@@ -168,3 +168,26 @@ crosscorr(W, output)
 subplot(1,2,2)
 crosscorr(output, output)
 
+%% Question 5b)
+clear all, close all
+A = tf(90, [90/3 1])
+subplot(1,2,1)
+impulse(A)
+subplot(1,2,2)
+step(A)
+
+%% Question 5c)
+close all, clear all
+A = tf(90, [90/3 1])
+bode(A)
+
+%% Question 5d)
+t = linspace(0,200,10000);
+y = 0.2*90*(1-exp(-t/(90/3)));
+plot(t,y)
+title('Response To the Integrate and Fire Model')
+xlabel('Time (s)')
+ylabel('Potential (mV)')
+
+
+
